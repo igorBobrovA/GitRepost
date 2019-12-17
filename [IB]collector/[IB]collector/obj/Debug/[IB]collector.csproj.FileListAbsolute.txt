@@ -1,0 +1,10 @@
+C:\Users\Сигма-М-1\Desktop\igooooooooor\[IB]collector\[IB]collector\bin\Debug\[IB]collector.exe.config
+C:\Users\Сигма-М-1\Desktop\igooooooooor\[IB]collector\[IB]collector\bin\Debug\[IB]collector.exe
+C:\Users\Сигма-М-1\Desktop\igooooooooor\[IB]collector\[IB]collector\bin\Debug\[IB]collector.pdb
+C:\Users\Сигма-М-1\Desktop\igooooooooor\[IB]collector\[IB]collector\obj\Debug\[IB]collector.csprojAssemblyReference.cache
+C:\Users\Сигма-М-1\Desktop\igooooooooor\[IB]collector\[IB]collector\obj\Debug\_IB_collector.Properties.Resources.resources
+C:\Users\Сигма-М-1\Desktop\igooooooooor\[IB]collector\[IB]collector\obj\Debug\[IB]collector.csproj.GenerateResource.cache
+C:\Users\Сигма-М-1\Desktop\igooooooooor\[IB]collector\[IB]collector\obj\Debug\[IB]collector.exe
+C:\Users\Сигма-М-1\Desktop\igooooooooor\[IB]collector\[IB]collector\obj\Debug\[IB]collector.pdb
+C:\Users\Сигма-М-1\Desktop\igooooooooor\[IB]collector\[IB]collector\obj\Debug\_IB_collector.Sign_in.resources
+C:\Users\Сигма-М-1\Desktop\igooooooooor\[IB]collector\[IB]collector\obj\Debug\_IB_collector.Sign_up.resources
