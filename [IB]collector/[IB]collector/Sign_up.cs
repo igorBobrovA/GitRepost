@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Net;
+using System.Net.Mail;
 
 namespace _IB_collector
 {
@@ -86,15 +88,25 @@ namespace _IB_collector
                 while (!User_Info.EndOfStream)
                 {
                     string[] tmp = User_Info.ReadLine().Split(',');
-                    if (tmp[0] == textBox1.Text)
+                    try
                     {
-                        MessageBox.Show("Данное имя пользователя уже используется", "Ошибка при регистрации", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        IsExists = true;
-                        break;
+                        MailAddress MA = new MailAddress(textBox3.Text);
+                        if (tmp[0] == textBox1.Text)
+                        {
+                            MessageBox.Show("Данное имя пользователя уже используется", "Ошибка при регистрации", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            IsExists = true;
+                            break;
+                        }
+                        if (tmp[3] == textBox3.Text)
+                        {
+                            MessageBox.Show("Данный електронный адрес уже используется", "Ошибка при регистрации", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            IsExists = true;
+                            break;
+                        }
                     }
-                    if (tmp[3] == textBox3.Text)
+                    catch
                     {
-                        MessageBox.Show("Данный електронный адрес уже используется", "Ошибка при регистрации", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Електронный адрес введён неверно", "Ошибка при регистрации", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         IsExists = true;
                         break;
                     }

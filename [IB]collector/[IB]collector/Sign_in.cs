@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Net.Mail;
 
 namespace _IB_collector
 {
@@ -78,12 +79,16 @@ namespace _IB_collector
                 bool Acces = false;
                 string login_Gmail = textBox1.Text,
                        Password = textBox2.Text;
-                int number = textBox1.Text.IndexOf('@'),
-                    LoginOrGmail;
-                if (number == -1)
-                    LoginOrGmail = 0;
-                else
+                int LoginOrGmail = 0;
+                try
+                {
+                    MailAddress MA = new MailAddress(textBox1.Text);
                     LoginOrGmail = 2;
+                }
+                catch
+                {
+                    LoginOrGmail = 0;
+                }
                 using(StreamReader SR = new StreamReader("users/Users_info.txt"))
                 {
                     while (!SR.EndOfStream)
@@ -107,6 +112,13 @@ namespace _IB_collector
             }
             else
                 MessageBox.Show("Все поля должны быть заполнены", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+            Form FP = new ForgotPassword();
+            FP.Show();
         }
     }
 }

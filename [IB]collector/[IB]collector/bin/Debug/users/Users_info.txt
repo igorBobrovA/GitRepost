@@ -1,2 +1,3 @@
 ﻿Igor_admin,igor250107,bobrovigor250107@gmail.com,a
-admin,admin,admin@admin.adnin,a
+admin,admin,admin@admin.admin,a
+user,user,user@user.user,u
