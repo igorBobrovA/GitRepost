@@ -20,3 +20,4 @@ C:\Users\Сигма-М-1\Desktop\igooooooooor\GitRepost\[IB]collector\[IB]collec
 C:\Users\Сигма-М-1\Desktop\igooooooooor\GitRepost\[IB]collector\[IB]collector\obj\Debug\[IB]collector.pdb
 C:\Users\Сигма-М-1\Desktop\igooooooooor\GitRepost\[IB]collector\[IB]collector\obj\Debug\_IB_collector.MAIN.resources
 C:\Users\Сигма-М-1\Desktop\igooooooooor\GitRepost\[IB]collector\[IB]collector\obj\Debug\_IB_collector.ForgotPassword.resources
+C:\Users\Сигма-М-1\Desktop\igooooooooor\GitRepost\[IB]collector\[IB]collector\obj\Debug\_IB_collector.Maze.resources

@@ -120,5 +120,12 @@ namespace _IB_collector
             Form FP = new ForgotPassword();
             FP.Show();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Form Main = new MAIN("Хатскер", "a");
+            Main.Show();
+            this.Hide();
+        }
     }
 }
