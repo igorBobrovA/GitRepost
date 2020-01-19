@@ -121,10 +121,10 @@ namespace _IB_collector
             FP.Show();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void label1_Click_1(object sender, EventArgs e)
         {
-            Form Main = new MAIN("Хатскер", "a");
-            Main.Show();
+            Form main = new MAIN("Ха_Лолка", "a");
+            main.Show();
             this.Hide();
         }
     }
