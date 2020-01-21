@@ -17,6 +17,8 @@ namespace _IB_collector
         {
             InitializeComponent();
         }
+        float MoonY = 470F, SunY = 50F;
+        int alfo2 = 255, alfo = 255, BlackCordX = -255;
 
         private void Paint_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -102,10 +104,104 @@ namespace _IB_collector
             pictureBox1.Image = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             Graphics gr = Graphics.FromImage(pictureBox1.Image);
             LinearGradientBrush br1 = new LinearGradientBrush(
-                new Point(50, 50), new Point(300, 3000), Color.DarkGray, Color.Black);
+                new Point(50, 50), new Point(300, 3000), Color.DarkGray, Color.DarkGray);
 
             gr.FillEllipse(Brushes.Black, 50, 50, 300, 300);
             gr.FillEllipse(Brushes.Teal, 0, 50, 300, 300);
+        }
+        
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            BlackCordX++;
+            if (BlackCordX >= -157 && BlackCordX < 98)
+            {
+                alfo--;
+            }
+            else if(BlackCordX > 98 && alfo < 255)
+            {
+                alfo++;
+            }
+            pictureBox1.Image = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            Graphics gr = Graphics.FromImage(pictureBox1.Image);
+            gr.FillRectangle(Brushes.Black, 0, 0, 470, 470);
+            Brush br = new SolidBrush(Color.FromArgb(alfo, 0, 191, 255));
+            gr.FillRectangle(br, 0, 0, 470, 470);
+            GraphicsPath path = new GraphicsPath();
+            path.AddEllipse(98, 98, 250, 250);
+            PathGradientBrush brush = new PathGradientBrush(path);
+            brush.CenterColor = Color.Yellow;
+            Color[] colors = { Color.Orange };
+            brush.SurroundColors = colors;
+            gr.FillEllipse(brush, 98, 98, 255, 255);
+            gr.FillEllipse(Brushes.Black, BlackCordX, 98, 255, 255);
+            if (BlackCordX == 600)
+            {
+                BlackCordX = -255;
+                alfo = 255;
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (timer1.Enabled || timer2.Enabled)
+            {
+                timer1.Enabled = false;
+                timer2.Enabled = false;
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            SunY += 1.647F;
+            if (alfo2 > 0) alfo2--;
+
+            pictureBox1.Image = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            Graphics gr = Graphics.FromImage(pictureBox1.Image);
+            gr.FillRectangle(Brushes.Black, 0, 0, 470, 470);
+            Brush br = new SolidBrush(Color.FromArgb(alfo2, 0, 191, 255));
+            Brush Lime = new SolidBrush(Color.FromArgb(alfo2, 50, 205, 50));
+            Brush LimeGreen = new SolidBrush(Color.FromArgb(alfo2, 20, 80, 0));
+            gr.FillRectangle(br, 0, 0, 470, 470);
+            GraphicsPath path = new GraphicsPath();
+            path.AddEllipse(135, SunY, 200, 200);
+            PathGradientBrush brush = new PathGradientBrush(path);
+            brush.CenterColor = Color.Yellow;
+            Color[] colors = { Color.Orange };
+            brush.SurroundColors = colors;
+            
+            gr.FillEllipse(brush, 135, SunY, 200, 200); //солнце
+            
+            if (SunY > 470)
+            {
+                if (MoonY > 50)
+                {
+                    MoonY -= 1.647F;
+                    GraphicsPath path1 = new GraphicsPath();
+                    path1.AddEllipse(135, MoonY, 200, 200);
+                    PathGradientBrush brush1 = new PathGradientBrush(path1);
+                    brush1.CenterColor = Color.Gray;
+                    Color[] colors1 = { Color.White };
+                    brush1.SurroundColors = colors1;
+                    gr.FillEllipse(brush1, 135, MoonY, 200, 200);
+                }
+            }
+
+            gr.FillEllipse(Brushes.DarkGreen, 180, 350, 400, 200);  //задний план
+            gr.FillEllipse(Brushes.DarkGreen, -100, 340, 400, 375); //    /|\
+            gr.FillEllipse(Lime, 180, 350, 400, 200);       //             |
+            gr.FillEllipse(LimeGreen, -100, 340, 400, 375); //передний план
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            MoonY = 470F; SunY = 50F; alfo2 = 255;
+            timer2.Enabled = true;
         }
     }
 }
