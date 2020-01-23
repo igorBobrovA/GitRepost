@@ -46,6 +46,13 @@ namespace _IB_collector
             this.Hide();
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form test = new test();
+            test.Show();
+            this.Hide();
+        }
+
         private void MAIN_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
