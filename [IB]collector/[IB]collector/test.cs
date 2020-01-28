@@ -26,6 +26,8 @@ namespace _IB_collector
         private void button1_Click(object sender, EventArgs e)
         {
             richTextBox1.Text = "";
+            richTextBox2.Text = "";
+            richTextBox3.Text = "";
             int a = Convert.ToInt32(textBox1.Text),
                 b = Convert.ToInt32(textBox2.Text),
                 sum = 0;
@@ -48,26 +50,28 @@ namespace _IB_collector
             else
             {
                 MessageBox.Show("Все числа равны", "Google", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                richTextBox1.Text = a + "";
+                richTextBox1.Text = a + "\n";
                 sum += a;
             }
-            richTextBox1.Text += "\n\nСумма = " + sum;
+            richTextBox1.Text += "\n\nСумма = \n" + sum;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             //Создать массив на 30 рандомных 1, 100 элементов
             richTextBox1.Text = "";
-            int[] mas = new int[30];
+            richTextBox2.Text = "";
+            richTextBox3.Text = "";
+            int[] mas = new int[50];
             R = new Random();
-            mas[0] = R.Next(1, 100);
+            mas[0] = R.Next(-100, 101);
             int min = mas[0],
                 max = mas[0];
             string st = "";
             for (int i = 1; i < mas.Length; i++)
             {
-                mas[i] = R.Next(1, 101);
-                richTextBox1.Text += mas[i] + " ";
+                mas[i] = R.Next(-100, 101);
+                richTextBox1.Text += mas[i] + "\n";
                 if (mas[i] > max)
                 {
                     max = mas[i];
@@ -76,9 +80,13 @@ namespace _IB_collector
                 {
                     min = mas[i];
                 }
+                if (mas[i] > 0)
+                {
+                    richTextBox2.Text += mas[i] + "\n";
+                }
                 if (mas[i] % 3 == 0)
                 {
-                    richTextBox2.Text += mas[i] + " ";
+                    richTextBox3.Text += mas[i] + "\n";
                 }
             }
             
@@ -88,15 +96,58 @@ namespace _IB_collector
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //создать рандомный лист с рандомными эл.
-            //кол. эл от 1 - 30
-            //знач эл от -100 - 100
+            richTextBox1.Text = "";
+            richTextBox2.Text = "";
+            richTextBox3.Text = "";
             R = new Random();
-            int listEl = R.Next(1, 31);
             List<int> list = new List<int>();
-            for (int i = 0; i < listEl; i++)
+            for (int i = 0; i < 20; i++)
             {
-                list.Add(R.Next(-100, 101));
+                list.Add(R.Next(-1000, 1001));
+                richTextBox1.Text += list[i] + "\n";
+            }
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i] >= 10 && list[i] <= 99 || list[i] <= -10 && list[i] >= -99)
+                {
+                    list.Remove(list[i]);
+                    i--;
+                }
+            }
+            for (int i = 0; i < list.Count; i++)
+            {
+                richTextBox2.Text += list[i] + "\n";
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = "";
+            richTextBox2.Text = "";
+            richTextBox3.Text = "";
+            R = new Random();
+            int[] mas = new int[10];
+            int box = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                mas[i] = R.Next(10, 101);
+                richTextBox1.Text += mas[i] + "\n";
+            }
+            for (int a = 0; a < 10; a++)
+            {
+            for (int i = 1; i < 10; i++)
+            {
+                if (mas[i] > mas[i - 1])
+                {
+                    box = mas[i];
+                    mas[i] = mas[i - 1];
+                    mas[i - 1] = box;
+                }
+            }
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                richTextBox2.Text += mas[i] + "\n";
             }
         }
     }

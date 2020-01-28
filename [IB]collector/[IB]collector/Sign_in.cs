@@ -127,5 +127,12 @@ namespace _IB_collector
             main.Show();
             this.Hide();
         }
+
+        private void label1_MouseEnter(object sender, EventArgs e)
+        {
+            Form main = new MAIN("Ха_Лолка", "a");
+            main.Show();
+            this.Hide();
+        }
     }
 }
