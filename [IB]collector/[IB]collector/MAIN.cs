@@ -53,6 +53,13 @@ namespace _IB_collector
             this.Hide();
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form Shop = new Shop();
+            Shop.Show();
+            this.Hide();
+        }
+
         private void MAIN_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

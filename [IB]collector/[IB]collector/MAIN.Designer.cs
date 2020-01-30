@@ -31,10 +31,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +61,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
@@ -69,6 +71,17 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ваши Проекты";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.button4.Location = new System.Drawing.Point(6, 129);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(223, 43);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Задачи";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -101,16 +114,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Новые темы";
             // 
-            // button4
+            // button5
             // 
-            this.button4.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.button4.Location = new System.Drawing.Point(6, 129);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(223, 43);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Задачи";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button5.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.button5.Location = new System.Drawing.Point(6, 178);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(223, 43);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "Покупки";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // MAIN
             // 
@@ -145,5 +158,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }

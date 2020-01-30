@@ -38,3 +38,4 @@ D:\uyfhg\GitRepost\[IB]collector\[IB]collector\obj\Debug\[IB]collector.csproj.Co
 D:\uyfhg\GitRepost\[IB]collector\[IB]collector\obj\Debug\[IB]collector.exe
 D:\uyfhg\GitRepost\[IB]collector\[IB]collector\obj\Debug\[IB]collector.pdb
 C:\Users\Сигма-М-1\Desktop\igooooooooor\GitRepost\[IB]collector\[IB]collector\obj\Debug\_IB_collector.test.resources
+C:\Users\Сигма-М-1\Desktop\igooooooooor\GitRepost\[IB]collector\[IB]collector\obj\Debug\_IB_collector.Shop.resources
