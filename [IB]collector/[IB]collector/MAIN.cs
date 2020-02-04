@@ -60,6 +60,13 @@ namespace _IB_collector
             this.Hide();
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form Fifteen = new Fifteen();
+            Fifteen.Show();
+            this.Hide();
+        }
+
         private void MAIN_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
