@@ -234,7 +234,7 @@
             // 
             this.label16.BackColor = System.Drawing.Color.Teal;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.Location = new System.Drawing.Point(190, 190);
+            this.label16.Location = new System.Drawing.Point(189, 190);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(50, 50);
             this.label16.TabIndex = 17;
@@ -255,8 +255,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(250, 50);
             this.button1.TabIndex = 19;
-            this.button1.Text = "button1";
+            this.button1.Text = "Перемешать";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -280,7 +281,7 @@
             // 
             // Fifteen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(249, 350);
@@ -308,6 +309,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Fifteen";
             this.Text = "Пятнашки";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Fifteen_FormClosing);
             this.ResumeLayout(false);
 
         }
