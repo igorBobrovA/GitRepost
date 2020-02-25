@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Net.Mail;
+using System.Data.SQLite;
 
 namespace _IB_collector
 {
@@ -89,7 +90,25 @@ namespace _IB_collector
                 {
                     LoginOrGmail = 0;
                 }
-                using(StreamReader SR = new StreamReader("users/Users_info.txt"))
+                finally
+                {
+                    SQLiteConnection con = new SQLiteConnection(@"DataSource=Users/Users_info.db;Version=3;");
+                    SQLiteCommand cmd = new SQLiteCommand();
+                    cmd.Connection = con;
+                    con.Open();
+                    if (LoginOrGmail == 0)
+                    {
+                        cmd.CommandText = "Select * From Users When login = '" + textBox1.Text + "'"+
+                            " and password = '" + textBox2.Text + "'";
+                    }
+                    else
+                    {
+
+                    }
+                    con.Close();
+                }
+                
+                /*using(StreamReader SR = new StreamReader("users/Users_info.txt"))
                 {
                     while (!SR.EndOfStream)
                     {
@@ -108,7 +127,7 @@ namespace _IB_collector
                 if (!Acces)
                 {
                     MessageBox.Show("Вы не авторизовались", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                }*/
             }
             else
                 MessageBox.Show("Все поля должны быть заполнены", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -116,7 +135,6 @@ namespace _IB_collector
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
             Form FP = new ForgotPassword();
             FP.Show();
         }
@@ -133,6 +151,20 @@ namespace _IB_collector
             Form main = new MAIN("Ха_Лолка", "a");
             main.Show();
             this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            button4.Visible = false;
+            this.Focus();
+        }
+
+        private void Sign_in_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                button4.Visible = true;
+            }
         }
     }
 }

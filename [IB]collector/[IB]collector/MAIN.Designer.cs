@@ -31,13 +31,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -73,6 +75,17 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ваши Проекты";
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.button6.Location = new System.Drawing.Point(6, 227);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(223, 43);
+            this.button6.TabIndex = 6;
+            this.button6.Text = "Пятнашки";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -120,6 +133,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button7);
             this.groupBox2.Location = new System.Drawing.Point(253, 58);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(235, 419);
@@ -127,16 +141,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Новые темы";
             // 
-            // button6
+            // button7
             // 
-            this.button6.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.button6.Location = new System.Drawing.Point(6, 227);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(223, 43);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Пятнашки";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button7.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.button7.Location = new System.Drawing.Point(6, 31);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(223, 43);
+            this.button7.TabIndex = 7;
+            this.button7.Text = "DataBaze";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // MAIN
             // 
@@ -157,6 +171,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MAIN_FormClosing);
             this.Load += new System.EventHandler(this.MAIN_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,5 +188,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }

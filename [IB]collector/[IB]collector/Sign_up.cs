@@ -115,7 +115,7 @@ namespace _IB_collector
                 if (!IsExists)
                 {
                     StreamWriter User_write = new StreamWriter("users/Users_info.txt", true);
-                    User_write.WriteLine(textBox1.Text + "," + textBox2.Text + "," + textBox3.Text + ",u");
+                    User_write.WriteLine(textBox1.Text + "," + textBox2.Text + "," + textBox3.Text + ",u,False");
                     MessageBox.Show("Вы успешно зарегистрировались", "Регистрация успешна", MessageBoxButtons.OK, MessageBoxIcon.Information);                 
                     User_write.Close();
                     this.Close();

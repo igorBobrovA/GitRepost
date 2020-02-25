@@ -67,6 +67,13 @@ namespace _IB_collector
             this.Hide();
         }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form DB = new DB();
+            DB.Show();
+            this.Hide();
+        }
+
         private void MAIN_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
