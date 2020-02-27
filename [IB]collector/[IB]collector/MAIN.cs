@@ -74,6 +74,20 @@ namespace _IB_collector
             this.Hide();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form admin = new admin();
+            admin.Show();
+            this.Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Form DGB = new DGB();
+            DGB.Show();
+            this.Close();
+        }
+
         private void MAIN_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

@@ -67,11 +67,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin.Designer.cs">
+      <DependentUpon>admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DB.Designer.cs">
       <DependentUpon>DB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DGB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DGB.Designer.cs">
+      <DependentUpon>DGB.cs</DependentUpon>
     </Compile>
     <Compile Include="Fifteen.cs">
       <SubType>Form</SubType>

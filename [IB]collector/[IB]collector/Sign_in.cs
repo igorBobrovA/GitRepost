@@ -98,12 +98,35 @@ namespace _IB_collector
                     con.Open();
                     if (LoginOrGmail == 0)
                     {
-                        cmd.CommandText = "Select * From Users When login = '" + textBox1.Text + "'"+
+                        cmd.CommandText = "Select * From Users Where login = '" + textBox1.Text + "'"+
                             " and password = '" + textBox2.Text + "'";
                     }
                     else
                     {
-
+                        cmd.CommandText = "Select * From Users Where email = '" + textBox1.Text + "'" +
+                            " and password = '" + textBox2.Text + "'";
+                    }
+                    SQLiteDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        string log = reader.GetValue(1).ToString(),
+                               rights = reader.GetValue(4).ToString(),
+                               ban = reader.GetValue(5).ToString();
+                        if (ban == "False")
+                        {
+                            MessageBox.Show("Вы успешно авторизовались", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Form main = new MAIN(log, rights);
+                            main.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Вас забанили\nВы не авторизовались", "У вас бан", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Вы не авторизовались", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     con.Close();
                 }

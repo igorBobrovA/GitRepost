@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Net;
 using System.Net.Mail;
+using System.Data.SQLite;
 
 namespace _IB_collector
 {
@@ -81,10 +82,39 @@ namespace _IB_collector
 
         private void button1_Click(object sender, EventArgs e)
         {
+            bool IsNOTreg = true;
             if (textBox1.Text != "Login" && textBox2.Text != "Password" && textBox3.Text != "Gmail")
             {
                 bool IsExists = false;
-                StreamReader User_Info = new StreamReader("users/Users_info.txt");
+                SQLiteConnection con = new SQLiteConnection(@"DataSource=Users/Users_info.db;Version=3;");
+                SQLiteCommand cmd = new SQLiteCommand();
+                cmd.Connection = con;
+                con.Open();
+                cmd.CommandText = "Select count(*)" +
+                                  " From Users u" +
+                                  " WHERE u.login = '" + textBox1.Text + "' " +
+                                  " OR u.email = '" + textBox3.Text + "'";
+                string Scalar = cmd.ExecuteScalar().ToString();
+                cmd.Reset();
+                if (Scalar  == "0")
+                {
+                    cmd.CommandText =   "INSERT into Users" +
+                                        " (login, email, password)" +
+                                        " VALUES('" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox3.Text + "')";
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Вы успешно зарегистрировались", "Регистрация успешна", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    IsNOTreg = false;
+                }
+                else
+                {
+                    MessageBox.Show("Ошибки:\n -Данное имя пользователя уже используется\n -Данный електронный адрес уже используется", "Ошибка при регистрации", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                con.Close();
+                if (!IsNOTreg)
+                {
+                    this.Close();
+                }
+                /*StreamReader User_Info = new StreamReader("users/Users_info.txt");
                 while (!User_Info.EndOfStream)
                 {
                     string[] tmp = User_Info.ReadLine().Split(',');
@@ -119,7 +149,7 @@ namespace _IB_collector
                     MessageBox.Show("Вы успешно зарегистрировались", "Регистрация успешна", MessageBoxButtons.OK, MessageBoxIcon.Information);                 
                     User_write.Close();
                     this.Close();
-                }
+                }*/
             }
             else
             {
