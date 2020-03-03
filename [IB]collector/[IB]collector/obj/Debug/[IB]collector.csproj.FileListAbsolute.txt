@@ -85,3 +85,5 @@ C:\Users\Сигма-М-1\Desktop\Igoor\GitRepost\[IB]collector\[IB]collector\bin
 C:\Users\Сигма-М-1\Desktop\Igoor\GitRepost\[IB]collector\[IB]collector\bin\Debug\System.Data.SQLite.xml
 C:\Users\Сигма-М-1\Desktop\Igoor\GitRepost\[IB]collector\[IB]collector\bin\Debug\System.Data.SQLite.dll.config
 C:\Users\Сигма-М-1\Desktop\Igoor\GitRepost\[IB]collector\[IB]collector\obj\Debug\[IB]collector.csproj.CopyComplete
+C:\Users\Сигма-М-1\Desktop\Igoor\GitRepost\[IB]collector\[IB]collector\obj\Debug\_IB_collector.admin.resources
+C:\Users\Сигма-М-1\Desktop\Igoor\GitRepost\[IB]collector\[IB]collector\obj\Debug\_IB_collector.ChandeUserInfo.resources

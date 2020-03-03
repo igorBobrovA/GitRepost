@@ -78,7 +78,7 @@ namespace _IB_collector
         {
             Form admin = new admin();
             admin.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void button8_Click(object sender, EventArgs e)

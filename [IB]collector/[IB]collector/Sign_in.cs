@@ -162,13 +162,6 @@ namespace _IB_collector
             FP.Show();
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-            Form main = new MAIN("Ха_Лолка", "a");
-            main.Show();
-            this.Hide();
-        }
-
         private void label1_MouseEnter(object sender, EventArgs e)
         {
             Form main = new MAIN("Ха_Лолка", "a");

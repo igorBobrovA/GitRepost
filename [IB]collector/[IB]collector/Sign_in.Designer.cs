@@ -114,7 +114,6 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 20);
             this.label1.TabIndex = 9;
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             this.label1.MouseEnter += new System.EventHandler(this.label1_MouseEnter);
             // 
             // button4
