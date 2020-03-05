@@ -60,6 +60,7 @@ namespace _IB_collector
         private void button1_Click(object sender, EventArgs e)
         {
             DataGridViewRow dgvr = dataGridView1.CurrentRow;
+
             Form GoToCUI = new ChandeUserInfo(dgvr.Cells[0].Value.ToString(), 
                                               dgvr.Cells[1].Value.ToString(),
                                               dgvr.Cells[2].Value.ToString(),
